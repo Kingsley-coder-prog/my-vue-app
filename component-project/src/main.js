@@ -1,3 +1,8 @@
 import { createApp } from 'vue';
 
-createApp({}).mount('#app');
+import App from './App.vue';
+
+const app = createApp(App);
+
+// app.component('learning-resource', LearningResource);
+app.mount('#app');
