@@ -9,11 +9,11 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: './teams',
+      path: '/teams',
       component: TeamsList, // our-domain.com/teams => ...
     },
     {
-      path: './users',
+      path: '/users',
       component: UsersList,
     },
   ],
