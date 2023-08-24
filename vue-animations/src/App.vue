@@ -51,12 +51,17 @@ export default {
       console.log(el);
       el.style.opacity = 0;
     },
-    enter(el) {
+    enter(el, done) {
       console.log('enter');
       console.log(el);
       let round = 1;
-      setInterval(function () {
-        el.style.opacity = round * 0.1;
+      const interval = setInterval(function () {
+        el.style.opacity = round * 0.01;
+        round++;
+        if (round > 100) {
+          clearInterval(interval);
+          done();
+        }
       }, 20);
     },
     afterEnter(el) {
@@ -66,15 +71,28 @@ export default {
     beforeLeave(el) {
       console.log('beforeLeave');
       console.log(el);
+      el.style.opacity = 1;
     },
-    leave(el) {
+
+    leave(el, done) {
       console.log('leave');
       console.log(el);
+      let round = 1;
+      const interval = setInterval(function () {
+        el.style.opacity = 1 - round * 0.01;
+        round++;
+        if (round > 100) {
+          clearInterval(interval);
+          done();
+        }
+      }, 20);
     },
+
     afterLeave(el) {
       console.log('afterLeave');
       console.log(el);
     },
+
     showUsers() {
       this.usersAreVisible = true;
     },
