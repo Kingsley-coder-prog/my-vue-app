@@ -14,12 +14,10 @@ const router = createRouter({
     {
       path: '/coaches/:id',
       component: CoachDetail,
-      children: [
-        { path: '/contact', component: ContactCoach }, // /coaches//c1/contact
-      ],
+      children: [{ path: '/contact', component: ContactCoach }],
     },
     { path: '/register', component: CoachRegistration },
-    { path: '/request', component: RequestsReceived },
+    { path: '/requests', component: RequestsReceived },
     { path: '/:notFound(.*)', component: NotFound },
   ],
 });
