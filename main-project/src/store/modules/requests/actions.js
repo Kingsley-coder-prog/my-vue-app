@@ -53,6 +53,6 @@ export default {
 
       requests.push(request);
     }
-    context.commit('setRequests', requests);
+    context.commit('setRequest', requests);
   },
 };
